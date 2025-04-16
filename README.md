@@ -139,6 +139,7 @@ urlpatterns = [
 
 ---
 
+```python
 Provider | Redirect URL (example)
 Google | http://localhost:8000/auth/complete/google-oauth2/
 Facebook | http://localhost:8000/auth/complete/facebook/
@@ -146,6 +147,7 @@ GitHub | http://localhost:8000/auth/complete/github/
 LinkedIn | http://localhost:8000/auth/complete/linkedin-oauth2/
 Twitter | http://localhost:8000/auth/complete/twitter/
 Instagram | http://localhost:8000/auth/complete/instagram/
+```
 
 ## 👤 Login Buttons (Frontend)
 You can use Django template tags for links:
