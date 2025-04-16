@@ -36,6 +36,8 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.github.GithubOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.instagram.InstagramOAuth2',
+
 )
 ```
 
@@ -98,11 +100,28 @@ SOCIAL_AUTH_GITHUB_KEY = 'your-github-client-id'
 SOCIAL_AUTH_GITHUB_SECRET = 'your-github-client-secret'
 ```
 
-### Add Social Keys to settings.py
+### Twitter 
+1. Add Social Keys to settings.py
+2. Go to [twitter Developer Settings](https://developer.twitter.com/en/portal/dashboard)
+3. Obtain a request token
+4. Redirect user to Twitter for auth
+5. Get oauth_token and oauth_verifier
+6. Get access token
+
+Use token to get user data from:
+```python
+SOCIAL_AUTH_TWITTER_KEY=your_twitter_api_key
+SOCIAL_AUTH_TWITTER_SECRET=your_twitter_api_secret
+```
+
+### Instagram
+1. Instagram OAuth2 (via Meta)
+2. Instagram uses OAuth2 via Facebook/Meta:
+3. Register app on: (https://developers.facebook.com/)
 
 ```python
-SOCIAL_AUTH_TWITTER_KEY = 'your-twitter-api-key'
-SOCIAL_AUTH_TWITTER_SECRET = 'your-twitter-api-secret'
+SOCIAL_AUTH_INSTAGRAM_KEY=your_instagram_client_id
+SOCIAL_AUTH_INSTAGRAM_SECRET=your_instagram_client_secret
 ```
 
 ---
@@ -120,6 +139,14 @@ urlpatterns = [
 
 ---
 
+Provider | Redirect URL (example)
+Google | http://localhost:8000/auth/complete/google-oauth2/
+Facebook | http://localhost:8000/auth/complete/facebook/
+GitHub | http://localhost:8000/auth/complete/github/
+LinkedIn | http://localhost:8000/auth/complete/linkedin-oauth2/
+Twitter | http://localhost:8000/auth/complete/twitter/
+Instagram | http://localhost:8000/auth/complete/instagram/
+
 ## 👤 Login Buttons (Frontend)
 You can use Django template tags for links:
 
@@ -129,6 +156,7 @@ You can use Django template tags for links:
 <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
 <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a>
 <a href="{% url 'social:begin' 'twitter' %}">Login with Twitter</a>
+<a href="{% url 'social:begin' 'instagram' %}">Login with Instagram</a>
 ```
 
 ---
