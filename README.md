@@ -124,6 +124,12 @@ SOCIAL_AUTH_INSTAGRAM_KEY=your_instagram_client_id
 SOCIAL_AUTH_INSTAGRAM_SECRET=your_instagram_client_secret
 ```
 
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
 ---
 
 ## 🌐 URLs Configuration
