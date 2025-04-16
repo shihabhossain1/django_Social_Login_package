@@ -35,6 +35,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.linkedin.LinkedinOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
 )
 ```
 
@@ -97,6 +98,13 @@ SOCIAL_AUTH_GITHUB_KEY = 'your-github-client-id'
 SOCIAL_AUTH_GITHUB_SECRET = 'your-github-client-secret'
 ```
 
+### Add Social Keys to settings.py
+
+```python
+SOCIAL_AUTH_TWITTER_KEY = 'your-twitter-api-key'
+SOCIAL_AUTH_TWITTER_SECRET = 'your-twitter-api-secret'
+```
+
 ---
 
 ## 🌐 URLs Configuration
@@ -120,6 +128,7 @@ You can use Django template tags for links:
 <a href="{% url 'social:begin' 'linkedin-oauth2' %}">Login with LinkedIn</a>
 <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
 <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a>
+<a href="{% url 'social:begin' 'twitter' %}">Login with Twitter</a>
 ```
 
 ---
