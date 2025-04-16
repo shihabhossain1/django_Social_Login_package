@@ -43,6 +43,15 @@ AUTHENTICATION_BACKENDS = (
 ## 🔑 Add Social Keys to `settings.py`
 
 ### Google
+
+### 🧩 Step 1: Set Up Google App
+1. Go to [Google Cloud Console](https://console.cloud.google.com)
+2. Create a project or use existing
+3. Navigate to **APIs & Services > Credentials**
+4. Create **OAuth 2.0 Client ID** (Web Application)
+5. Add redirect URI: `http://localhost:8000/google/callback/`
+6. Copy **Client ID** and **Client Secret**
+
 ```python
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'your-google-client-id'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'your-google-client-secret'
@@ -50,6 +59,13 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://localhost:8000/auth/complete/go
 ```
 
 ### LinkedIn
+
+### 🧩 Step 1: Set Up LinkedIn App
+1. Go to [https://www.linkedin.com/developers/apps](https://www.linkedin.com/developers/apps)
+2. Create a new app.
+3. Add the OAuth redirect URL: `http://localhost:8000/linkedin/callback/`
+4. Copy the **Client ID** and **Client Secret**.
+
 ```python
 SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = 'your-linkedin-client-id'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'your-linkedin-client-secret'
@@ -57,6 +73,13 @@ SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE = ['r_liteprofile', 'r_emailaddress']
 ```
 
 ### Facebook
+
+### Setup Steps
+1. Go to [Meta Developers](https://developers.facebook.com/)
+2. Create a new app → Facebook Login → Web
+3. Set redirect URI: `http://localhost:8000/facebook/callback/`
+4. Add to `settings.py`:
+   
 ```python
 SOCIAL_AUTH_FACEBOOK_KEY = 'your-facebook-app-id'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'your-facebook-app-secret'
@@ -64,6 +87,11 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 ```
 
 ### GitHub
+1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
+2. Create a new OAuth App
+3. Set callback: `http://localhost:8000/github/callback/`
+4. Add to `settings.py`:
+
 ```python
 SOCIAL_AUTH_GITHUB_KEY = 'your-github-client-id'
 SOCIAL_AUTH_GITHUB_SECRET = 'your-github-client-secret'
